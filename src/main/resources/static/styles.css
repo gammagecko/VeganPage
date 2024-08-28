@@ -1,19 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: palegreen;
+    background-color: #505050;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #333;
+    color: black;
     text-align: center;
     padding: 20px;
 }
 
+h4{
+    color: black;
+}
+
 p {
     text-align: center;
-    color: #333;
+    color: black;
 }
 
 .flex-container {
@@ -25,8 +29,8 @@ p {
     flex: 1;
     margin: 10px;
     padding: 20px;
-    background-color: #ffffff;
-    border: 4px solid black;
+    background-color: #505050;
+    border: 4px black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -38,4 +42,8 @@ ul {
 
 li {
     margin: 10px 0;
+}
+
+a {
+    color: green;
 }
