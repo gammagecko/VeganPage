@@ -28,3 +28,19 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('bootJar') {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
+
+bootRun {
+    sourceResources sourceSets.main
+}
