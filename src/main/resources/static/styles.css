@@ -34,6 +34,16 @@ p {
     text-align: center;
 }
 
+.column2 {
+    flex: 1;
+    width: 42.5%;
+    margin: 2.5%;
+    padding: 2.5%;
+    background-color: 	#282828;
+    border: 2px solid lightgrey;
+    text-align: center;
+}
+
 ul {
     list-style-type: none; /* Removes bullet points */
     padding: 0; /* Removes default padding */
@@ -45,4 +55,16 @@ li {
 
 a {
     color: #8cc751;
+}
+
+.vertical-container {
+     display: flex;        /* Use flexbox for layout */
+     flex-direction: column;  /* Stack children vertically */
+     align-items: flex-start; /* Align children to the left */
+ }
+
+.child {
+    width: 100%;          /* Ensure child elements take the full width of the container */
+    text-align: left;     /* Align text to the left */
+    padding: 5px 0;       /* Optional: Add some padding for spacing */
 }
