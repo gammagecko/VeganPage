@@ -68,3 +68,11 @@ a {
     text-align: left;     /* Align text to the left */
     padding: 5px 0;       /* Optional: Add some padding for spacing */
 }
+
+.intro {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    color: lightgray; /* Just for visualization */
+    padding: 20px; /* Optional padding for content */
+}
