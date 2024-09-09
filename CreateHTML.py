@@ -37,7 +37,7 @@ html_template = """<!DOCTYPE html>
     <a href="../index.html">Vegan Information By US State</a>
 </p>
 <p>
-    <img src="../Factory Farm Animals.png" width="1273" height="168">
+    <img src="../Pics/Factory Farm Animals.png" width="1273" height="168">
 </p>
     <div class="flex-container">
         <div class="column">
@@ -199,8 +199,232 @@ a = bl.InfoBlock('https://skylandssanctuary.org/visit-2/',
                  "Animal Sanctuary",
                  "New York")
 blocks.add(a)
-
-
+a = bl.InfoBlock("https://www.facebook.com/speaktucson/?paipv=0&eav=AfYcf6CG_WR4M16xBiVtZdERhLXvKtEXuUyG7GL2UagwJmrvWDG_zgr5IJMm0oZ0alY&_rdr",
+                 "SPEAK Tucson",
+                 "Animal Rights Organization",
+                 "Arizona")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/babson",
+                 "Allied Scholars - Babson",
+                 "Animal Rights Organization",
+                 "Massachusetts")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/berkeley",
+                 "Allied Scholars - Berkeley",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/brown",
+                 "Allied Scholars - Brown",
+                 "Animal Rights Organization",
+                 "Minnesota")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/columbia",
+                 "Allied Scholars - Columbia",
+                 "Animal Rights Organization",
+                 "New York")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/dartmouth",
+                 "Allied Scholars - Dartmouth",
+                 "Animal Rights Organization",
+                 "New Hampshire")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/harvard",
+                 "Allied Scholars - Harvard",
+                 "Animal Rights Organization",
+                 "Massachusetts")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/mit",
+                 "Allied Scholars - MIT",
+                 "Animal Rights Organization",
+                 "Massachusetts")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/ohiostate",
+                 "Allied Scholars - Ohio State University",
+                 "Animal Rights Organization",
+                 "Massachusetts")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/sam-houston-state",
+                 "Allied Scholars - Sam Houston State",
+                 "Animal Rights Organization",
+                 "Texas")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/tamu",
+                 "Allied Scholars - Texas A&M",
+                 "Animal Rights Organization",
+                 "Texas")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/uarizona",
+                 "Allied Scholars - U of Arizona",
+                 "Animal Rights Organization",
+                 "Arizona")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/uchicago",
+                 "Allied Scholars - U of Chicago",
+                 "Animal Rights Organization",
+                 "Massachusetts")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/university-of-north-texas",
+                 "Allied Scholars - U of North Texas",
+                 "Animal Rights Organization",
+                 "Texas")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/upenn",
+                 "Allied Scholars - U of Pennsylvania",
+                 "Animal Rights Organization",
+                 "Pennsylvania")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/utaustin",
+                 "Allied Scholars - UT Austin",
+                 "Animal Rights Organization",
+                 "Texas")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/uwmadison",
+                 "Allied Scholars - UW Madison",
+                 "Animal Rights Organization",
+                 "Wisconsin")
+blocks.add(a)
+a = bl.InfoBlock("https://www.alliedscholars.org/yale",
+                 "Allied Scholars - Yale",
+                 "Animal Rights Organization",
+                 "Connecticut")
+blocks.add(a)
+a = bl.InfoBlock("https://www.clementineranch.org/",
+                 "Clementine Ranch",
+                 "Animal Sanctuary",
+                 "Utah")
+blocks.add(a)
+a = bl.InfoBlock("https://www.farmsanctuary.org/the-sanctuaries/watkins-glen-ny/",
+                 "Farm Sanctuary - NY",
+                 "Animal Sanctuary",
+                 "New York")
+blocks.add(a)
+a = bl.InfoBlock("https://www.farmsanctuary.org/the-sanctuaries/los-angeles-ca/",
+                 "Farm Sanctuary - CA",
+                 "Animal Sanctuary",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/ashevilleanimalsave/",
+                 "Animal Save - Asheville",
+                 "Animal Rights Organization",
+                 "North Carolina")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/chinoanimalsave/",
+                 "Animal Save - Chino",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/denveranimalsave/",
+                 "Animal Save - Denver",
+                 "Animal Rights Organization",
+                 "Colorado")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/kcanimalsave/",
+                 "Animal Save - Kansas City",
+                 "Animal Rights Organization",
+                 "Missouri")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/lasvegasanimalsave/",
+                 "Animal Save - Las Vegas",
+                 "Animal Rights Organization",
+                 "Nevada")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/animalalliancenetwork/",
+                 "Animal Alliance Network - LA",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/laanimalsave/",
+                 "Animal Save - LA",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/lafuranimalsave/",
+                 "LA Fur Animal Save",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/louisvillepigsave/",
+                 "Louisville Pig Save",
+                 "Animal Rights Organization",
+                 "Kentucky")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/milwaukeeanimalsave/",
+                 "Animal Save - Milwaukee",
+                 "Animal Rights Organization",
+                 "Wisconsin")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/newarkanimalsave/",
+                 "Animal Save - Newark",
+                 "Animal Rights Organization",
+                 "New Jersey")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/smithfieldanimalsrescue/",
+                 "Animal Save - Smithfield",
+                 "Animal Rights Organization",
+                 "Virginia")
+blocks.add(a)
+a = bl.InfoBlock("https://www.facebook.com/StocktonAnimalSave",
+                 "Animal Save - Stockton",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/tucsonanimalsave/",
+                 "Animal Save - Tuscon",
+                 "Animal Rights Organization",
+                 "Arizona")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/centralpa_farmed_animal_save/",
+                 "Animal Save - Central PA",
+                 "Animal Rights Organization",
+                 "Pennsylvania")
+blocks.add(a)
+a = bl.InfoBlock("https://www.facebook.com/groups/2095065820872274",
+                 "Animal Save - Des Moines",
+                 "Animal Rights Organization",
+                 "Iowa")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/njanimalsavemovement/",
+                 "NJ Animal Save Movement",
+                 "Animal Rights Organization",
+                 "New Jersey")
+blocks.add(a)
+a = bl.InfoBlock("http://instagram.com/nyfasave",
+                 "NY Farmed Animal Save",
+                 "Animal Rights Organization",
+                 "New York")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/orange_county_animal_save/",
+                 "Animal Save - Orange County",
+                 "Animal Rights Organization",
+                 "California")
+blocks.add(a)
+a = bl.InfoBlock("https://www.facebook.com/profile.php?id=100067538743599",
+                 "Animal Save - Western PA",
+                 "Animal Rights Organization",
+                 "Pennsylvania")
+blocks.add(a)
+a = bl.InfoBlock("https://www.swoarn.org/",
+                 "SWOARN - SW Ohio",
+                 "Animal Rights Organization",
+                 "Ohio")
+blocks.add(a)
+a = bl.InfoBlock("https://columbusanimaladvocates.org/",
+                 "Columbus Animal Advocates",
+                 "Animal Rights Organization",
+                 "Ohio")
+blocks.add(a)
+a = bl.InfoBlock("https://www.foreverlandfarm.org/",
+                 "Foreverland Farm",
+                 "Animal Sanctuary",
+                 "Ohio")
+blocks.add(a)
+a = bl.InfoBlock("https://redoakanimalrescue.com/",
+                 "Red Oak Animal Rescue",
+                 "Animal Sanctuary",
+                 "Ohio")
+blocks.add(a)
+                 
 
 for state in states:
     lines = html_template
@@ -273,7 +497,23 @@ for state in states:
         # Join the lines back into a single text block
         lines = "\n".join(lines)
 
-    # Mercy For Animals
+    # Direct Action Everywhere
+    if state in ["California", "New York", "Texas", "Oregon",
+                "Washington", "Illinois", "Michigan", "Massachusetts", "Florida"]:
+
+        # Convert text block to a list of lines
+        lines = lines.splitlines()
+
+        # New line to add
+        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere</a></li>"""
+
+        # Insert the new line at the desired position (index 2 for the third line)
+        lines.insert(75, new_line)
+
+        # Join the lines back into a single text block
+        lines = "\n".join(lines)
+
+    ''' Mercy For Animals
     if state in ["California", "New York", "Texas"]:
         
         # Convert text block to a list of lines
@@ -286,24 +526,8 @@ for state in states:
         lines.insert(75, new_line)
 
         # Join the lines back into a single text block
-        lines = "\n".join(lines)
-        
-    # Animal Save Movement Addition    
-    if state in ["California", "Colorado", "Florida", "Georgia", "Illinois",
-                    "Maryland", "Massachusetts", "Michigan", "Minnesota", "New Jersey",
-                    "New York", "Ohio", "Oregon", "Pennsylvania", "Texas", "Washington"]:
-        
-        # Convert text block to a list of lines
-        lines = lines.splitlines()
+        lines = "\n".join(lines)'''
 
-        # New line to add
-        new_line = """<li><a href="https://thesavemovement.org">Animal Save Movement</a></li>"""
-
-        # Insert the new line at the desired position (index 2 for the third line)
-        lines.insert(75, new_line)
-
-        # Join the lines back into a single text block
-        lines = "\n".join(lines)
     # ANIMAL SANCTUARY ADDITIONS     
     # ADD BLOCKS
     for block in blocks.arr:
@@ -375,7 +599,7 @@ for state in states:
         # Join the lines back into a single text block
         lines = "\n".join(lines)
 
-    # Mercy For Animals
+    ''' Mercy For Animals
     if state in ["California", "New York", "Texas"]:
         
         # Convert text block to a list of lines
@@ -388,18 +612,16 @@ for state in states:
         lines.insert(32, new_line)
 
         # Join the lines back into a single text block
-        lines = "\n".join(lines)
-        
-    # Animal Save Movement Addition    
-    if state in ["California", "Colorado", "Florida", "Georgia", "Illinois",
-                    "Maryland", "Massachusetts", "Michigan", "Minnesota", "New Jersey",
-                    "New York", "Ohio", "Oregon", "Pennsylvania", "Texas", "Washington"]:
-        
+        lines = "\n".join(lines)'''
+    # Direct Action Everywhere
+    if state in ["California", "New York", "Texas", "Oregon",
+                "Washington", "Illinois", "Michigan", "Massachusetts", "Florida"]:
+
         # Convert text block to a list of lines
         lines = lines.splitlines()
 
         # New line to add
-        new_line = """<li><a href="https://thesavemovement.org">Animal Save Movement</a></li>"""
+        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(32, new_line)
