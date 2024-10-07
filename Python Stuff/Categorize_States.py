@@ -22,5 +22,8 @@ for row in ARO.itertuples(index=True, name='Pandas'):
     ARO.at[row_num, 'State'] = state
     row_num += 1
 
-ARO_USA = ARO.dropna(subset=['State'])
+ARO_USA = ARO.dropna(subset=['State', 'name', 'description'], how='any')
+ARO_USA = ARO_USA.sort_values(by='State')
+ARO_USA = ARO_USA.reset_index(drop=True)
+
 ARO_USA.to_csv("AnimalRightsOrgsUSA.csv")

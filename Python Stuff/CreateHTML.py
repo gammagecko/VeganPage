@@ -2,7 +2,20 @@ import InfoBlock as bl
 import InfoBlocks as bls
 import pandas as pd
 
-df = pd.read_csv("AnimalRightsOrgsUSA.csv")
+file_path = "AnimalRightsOrgsUSA.csv"
+
+encodings = ['utf-8', 'latin1', 'ISO-8859-1', 'cp1252', 'utf-16le']
+
+for encoding in encodings:
+    try:
+        df = pd.read_csv(file_path, encoding=encoding)
+        print(f"Successfully read the file with encoding: {encoding}")
+        break
+    except UnicodeDecodeError:
+        print(f"Failed to decode with encoding: {encoding}")
+else:
+    print("All specified encodings failed. Check the file format or content.")
+    
 states = [
     "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
     "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
@@ -126,17 +139,15 @@ html_template = """<!DOCTYPE html>
 </html>
 """
 blocks = bls.InfoBlocks()
+df2 = df.reset_index(drop=True)
 
-df2 = df.dropna(subset=['name'])
-df3 = df2.dropna(subset=['description'])
-df4 = df3.reset_index(drop=True)
-
-for i in range(len(df4) - 1):
-    a = bl.InfoBlock(df4.at[i, 'description'],
-                     df4.at[i, 'name'],
-                     "Animal Rights Organization",
-                     df4.at[i, 'State'])
-    blocks.add(a)
+for i in range(len(df2) - 1):
+    if df2.at[i, "Active"] == "Y":
+        a = bl.InfoBlock(df2.at[i, 'description'],
+                         df2.at[i, 'name'],
+                         "Animal Rights Organization",
+                         df2.at[i, 'State'])
+        blocks.add(a)
 
 a = bl.InfoBlock("https://www.youtube.com/watch?v=nk36rifq38w",
               "Drone Footage Exposes Real California Dairy Farm",
@@ -163,7 +174,7 @@ a = bl.InfoBlock("https://www.sagemtn.org/",
                  "Animal Sanctuary",
                  "Utah")
 blocks.add(a)
-'''
+
 a = bl.InfoBlock("https://www.facebook.com/groups/333822847614170",
                  "Glass Walls Experience",
                  "Animal Rights Organization",
@@ -173,7 +184,7 @@ a = bl.InfoBlock("https://uarc.io/join/",
                  "Utah Animal Rights Coalition",
                  "Animal Rights Organization",
                  "Utah")
-blocks.add(a)'''
+blocks.add(a)
 a = bl.InfoBlock("https://casanctuary.org/",
                  "Catskill Aimal Sanctuary",
                  "Animal Sanctuary",
@@ -189,12 +200,12 @@ a = bl.InfoBlock("https://www.rootssanctuary.org/",
                  "Animal Sanctuary",
                  "New Mexico")
 blocks.add(a)
-'''
+
 a = bl.InfoBlock("https://www.facebook.com/alabamaanimalrights/",
                  "Alabama Animal Rights",
                  "Animal Rights Organization",
                  "Alabama")
-blocks.add(a)'''
+blocks.add(a)
 a = bl.InfoBlock("https://www.lovingfarm.org/",
                  "Loving Farm Animal Sanctuary",
                  "Animal Sanctuary",
@@ -215,7 +226,6 @@ a = bl.InfoBlock('https://skylandssanctuary.org/visit-2/',
                  "Animal Sanctuary",
                  "New York")
 blocks.add(a)
-'''
 a = bl.InfoBlock("https://www.facebook.com/speaktucson/?paipv=0&eav=AfYcf6CG_WR4M16xBiVtZdERhLXvKtEXuUyG7GL2UagwJmrvWDG_zgr5IJMm0oZ0alY&_rdr",
                  "SPEAK Tucson",
                  "Animal Rights Organization",
@@ -305,7 +315,7 @@ a = bl.InfoBlock("https://www.alliedscholars.org/yale",
                  "Allied Scholars - Yale",
                  "Animal Rights Organization",
                  "Connecticut")
-blocks.add(a)'''
+blocks.add(a)
 a = bl.InfoBlock("https://www.clementineranch.org/",
                  "Clementine Ranch",
                  "Animal Sanctuary",
@@ -321,7 +331,6 @@ a = bl.InfoBlock("https://www.farmsanctuary.org/the-sanctuaries/los-angeles-ca/"
                  "Animal Sanctuary",
                  "California")
 blocks.add(a)
-'''
 a = bl.InfoBlock("https://www.instagram.com/ashevilleanimalsave/",
                  "Animal Save - Asheville",
                  "Animal Rights Organization",
@@ -362,11 +371,13 @@ a = bl.InfoBlock("https://www.instagram.com/lafuranimalsave/",
                  "Animal Rights Organization",
                  "California")
 blocks.add(a)
+'''
 a = bl.InfoBlock("https://www.instagram.com/louisvillepigsave/",
                  "Louisville Pig Save",
                  "Animal Rights Organization",
                  "Kentucky")
 blocks.add(a)
+'''
 a = bl.InfoBlock("https://www.instagram.com/milwaukeeanimalsave/",
                  "Animal Save - Milwaukee",
                  "Animal Rights Organization",
@@ -431,7 +442,7 @@ a = bl.InfoBlock("https://columbusanimaladvocates.org/",
                  "Columbus Animal Advocates",
                  "Animal Rights Organization",
                  "Ohio")
-blocks.add(a)'''
+blocks.add(a)
 a = bl.InfoBlock("https://www.foreverlandfarm.org/",
                  "Foreverland Farm",
                  "Animal Sanctuary",
@@ -441,6 +452,21 @@ a = bl.InfoBlock("https://redoakanimalrescue.com/",
                  "Red Oak Animal Rescue",
                  "Animal Sanctuary",
                  "Ohio")
+blocks.add(a)
+a = bl.InfoBlock("https://www.instagram.com/the.salty.sanctuary/",
+                 "The Salty Sanctuary",
+                 "Animal Sanctuary",
+                 "Utah")
+blocks.add(a)
+a = bl.InfoBlock("https://wasatchwanderers.org/",
+                 "Wasatch Wanderers Animal Rescue",
+                 "Animal Sanctuary",
+                 "Utah")
+blocks.add(a)
+a = bl.InfoBlock("https://www.ritzyrescueranch.org/",
+                 "Ritzy Rescue Ranch",
+                 "Animal Sanctuary",
+                 "Utah")
 blocks.add(a)
                  
 
@@ -501,7 +527,7 @@ for state in states:
 
             # Join the lines back into a single text block
             lines = "\n".join(lines)
-            '''
+            
     if state in ["California", "Colorado", "Connecticut", "Florida", "Georgia",
                     "Illinois", "Maryland", "Massachusetts", "Michigan", "Minnesota",
                     "New Jersey", "New York", "Ohio", "Oregon", "Pennsylvania", "Texas"]:
@@ -509,7 +535,26 @@ for state in states:
         lines = lines.splitlines()
         
         # New line to add
-        new_line = """<li><a href="https://www.anonymousforthevoiceless.org">Anonymous for the Voiceless</a></li>"""
+        new_line = """<li><a href="https://www.anonymousforthevoiceless.org">Anonymous for the Voiceless - General Website</a></li>"""
+
+        # Insert the new line at the desired position (index 2 for the third line)
+        lines.insert(75, new_line)
+
+        # Join the lines back into a single text block
+        lines = "\n".join(lines)
+
+    if state in states:
+        # Convert text block to a list of lines
+        lines = lines.splitlines()
+
+        # New line to add
+        new_line = """<li><a href="https://www.peta2.com/help-animals/activism-help/">SOS PETA - General Website</a></li>"""
+
+        # Insert the new line at the desired position (index 2 for the third line)
+        lines.insert(75, new_line)
+
+        # New line to add
+        new_line = """<li><a href="https://www.animalactivismmentorship.com/">Animal Activism Mentorship - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(75, new_line)
@@ -525,7 +570,7 @@ for state in states:
         lines = lines.splitlines()
 
         # New line to add
-        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere</a></li>"""
+        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(75, new_line)
@@ -533,20 +578,20 @@ for state in states:
         # Join the lines back into a single text block
         lines = "\n".join(lines)
 
-     Mercy For Animals
-    if state in ["California", "New York", "Texas"]:
-        
+    # Veggie Mijas
+    if state in ["California", "New York", "Florida"]:
+
         # Convert text block to a list of lines
         lines = lines.splitlines()
 
         # New line to add
-        new_line = """<li><a href="https://mercyforanimals.org/">Mercy For Animals</a></li>"""
+        new_line = """<li><a href="https://www.veggiemijas.com/">Veggie Mijas - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(75, new_line)
 
         # Join the lines back into a single text block
-        lines = "\n".join(lines)'''
+        lines = "\n".join(lines)
 
     # ANIMAL SANCTUARY ADDITIONS     
     # ADD BLOCKS
@@ -605,7 +650,7 @@ for state in states:
 
             # Join the lines back into a single text block
             lines = "\n".join(lines)
-            '''
+            
     if state in ["California", "Colorado", "Connecticut", "Florida", "Georgia",
                     "Illinois", "Maryland", "Massachusetts", "Michigan", "Minnesota",
                     "New Jersey", "New York", "Ohio", "Oregon", "Pennsylvania", "Texas"]:
@@ -613,28 +658,28 @@ for state in states:
         lines = lines.splitlines()
         
         # New line to add
-        new_line = """<li><a href="https://www.anonymousforthevoiceless.org">Anonymous for the Voiceless</a></li>"""
+        new_line = """<li><a href="https://www.anonymousforthevoiceless.org">Anonymous for the Voiceless - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(32, new_line)
 
         # Join the lines back into a single text block
         lines = "\n".join(lines)
-
-     Mercy For Animals
-    if state in ["California", "New York", "Texas"]:
         
+    #Veggie Mijas
+    if state in ["California", "New York", "Florida"]:
+
         # Convert text block to a list of lines
         lines = lines.splitlines()
 
         # New line to add
-        new_line = """<li><a href="https://mercyforanimals.org/">Mercy For Animals</a></li>"""
+        new_line = """<li><a href="https://www.veggiemijas.com/">Veggie Mijas - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(32, new_line)
 
         # Join the lines back into a single text block
-        lines = "\n".join(lines)
+        lines = "\n".join(lines)    
     # Direct Action Everywhere
     if state in ["California", "New York", "Texas", "Oregon",
                 "Washington", "Illinois", "Michigan", "Massachusetts", "Florida"]:
@@ -643,13 +688,33 @@ for state in states:
         lines = lines.splitlines()
 
         # New line to add
-        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere</a></li>"""
+        new_line = """<li><a href="https://www.directactioneverywhere.com/">Direct Action Everywhere - General Website</a></li>"""
 
         # Insert the new line at the desired position (index 2 for the third line)
         lines.insert(32, new_line)
 
         # Join the lines back into a single text block
-        lines = "\n".join(lines)'''
+        lines = "\n".join(lines)
+
+    # SOS PETA & Animal Activism Mentorship
+    if state in states:
+        # Convert text block to a list of lines
+        lines = lines.splitlines()
+
+        # New line to add
+        new_line = """<li><a href="https://www.peta2.com/help-animals/activism-help/">SOS PETA - General Website</a></li>"""
+
+        # Insert the new line at the desired position (index 2 for the third line)
+        lines.insert(32, new_line)
+
+        # New line to add
+        new_line = """<li><a href="https://www.animalactivismmentorship.com/">Animal Activism Mentorship - General Website</a></li>"""
+
+        # Insert the new line at the desired position (index 2 for the third line)
+        lines.insert(32, new_line)
+
+        # Join the lines back into a single text block
+        lines = "\n".join(lines)
 
     file_name = state.replace(" ", "_") + ".html"
     lowerState = state.replace(" ", "_").lower()
